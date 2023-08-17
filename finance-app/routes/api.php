@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('get_finance', [FinanceController::class, 'financeApi']);
+Route::get('get_finance_chart', [FinanceController::class, 'financeChart']);

@@ -23,6 +23,20 @@ class FinanceController extends Controller
         return response()->json(['finance_data' => $result]);
     }
 
+    public function financeChart()
+    {
+        $result = [];
+        $response = $this->getFinanceData();
+        foreach ($response->results as $data) {
+
+            $result['dates'][] = date('d-m-Y', $data->t / 1000);
+            $result['high'][] = $data->h;
+            $result['low'][] = $data->l;
+        }
+
+        return response(['finance_data' => $result]);
+    }
+
     //  action called from finance.vue component
     public function financeLib()
     {

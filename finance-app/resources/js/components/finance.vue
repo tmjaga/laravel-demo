@@ -37,7 +37,7 @@
         </thead>
         <tbody>
             <tr  v-for="row in result" :key ="row.id" >
-                <td scope="row">{{ moment(row.t / 1000).format('DD-MM-YYYY HH:mm:ss') }}</td>
+                <td scope="row">{{ moment(row.t).format('DD-MM-YYYY HH:mm:ss') }}</td>
                 <td>{{ row.o }}</td>
                 <td>{{ row.h }}</td>
                 <td>{{ row.l }}</td>
